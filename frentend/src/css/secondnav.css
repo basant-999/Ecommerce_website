@@ -1,0 +1,18 @@
+#secondnav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #222B3F;
+    padding: 20px;
+
+}
+#lr{
+    background-color: #222B3F;
+    color:#FFFFFF;
+    font-size: 16px;
+    border: none;
+}
+#card{
+    border: none;
+    background-color: #EF6623;
+    color: #FFFFFF;
+}

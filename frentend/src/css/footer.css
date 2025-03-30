@@ -1,0 +1,74 @@
+#scrollfoot{
+    height: 400px;
+    width: 90%;
+    margin: auto;
+    background-color: #222B3F;
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    gap: 20px;
+    scroll-behavior:smooth;
+    
+}
+#scrollfoot div{
+    margin-left: 20px;
+    
+}
+#whycoo{
+    display: flex;
+    justify-content: center;
+}
+#whycoo span{
+    color: #EF6623;
+    font-size: 24px;
+}
+#footimg{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+#footimg h2{
+    color: #EF6623;
+    font-size: 24px;
+}
+#footimg p{
+    font-size: 16px;
+    color: #9F9F9F;
+}
+
+#lastfoot{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(254, 248, 245);
+    margin-top: 20px;
+    
+}
+#lastfoot div h3{
+    color: #EF6623;
+    font-size: 16px;
+} 
+#lastfoot div p{
+    font-size: 16px;
+    color: #00000080;
+}
+
+#lastfoot div{
+    margin-top: 30px;
+}
+
+#finlast{
+    background-color: #222B3F;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+#lasttest{
+    margin-left: 50px;
+    margin-top: 50px;
+  
+    
+}
+#lasttest h5{
+    font-size: 16px;
+    color: #000000;
+}
