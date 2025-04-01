@@ -8,10 +8,15 @@ import Form from 'react-bootstrap/Form';
 import Base_url from '../config/Baseurl';
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 const Secondnav = () => {
    const [adminid,Setadminid] = useState("")
    const [password,Setpassword] = useState("")
+   const product = useSelector(state=>state.mycard.card)
+   const proLenght = product.length;
+   
    const navigate = useNavigate()
 
      const handlesubmit=async(e)=>{
@@ -44,7 +49,7 @@ const Secondnav = () => {
            <div>
               <button id='lr'>login</button>
               <button id='lr'>register</button>
-              <button id='card'><FaShoppingCart />|cart</button>
+              <button id='card'><FaShoppingCart />|cart{proLenght}</button>
               <button id='lr'  onClick={handleShow}>admin</button>
            </div>
      </section>
