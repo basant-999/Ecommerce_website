@@ -3,6 +3,12 @@
     justify-content: space-between;
     background-color: #222B3F;
     padding: 20px;
+    
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
 
 }
 #lr{

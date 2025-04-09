@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import "../css/secondnav.css"
 import { FaShoppingCart } from "react-icons/fa";
 import { useState } from 'react';
@@ -9,6 +9,8 @@ import Base_url from '../config/Baseurl';
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { mycontext } from '../Contex';
 
 
 const Secondnav = () => {
@@ -18,6 +20,8 @@ const Secondnav = () => {
    const proLenght = product.length;
    
    const navigate = useNavigate()
+
+   const{setLogedIn,uname,uemail,setuemail,setUname} = useContext(mycontext);
 
      const handlesubmit=async(e)=>{
       e.preventDefault()
@@ -40,6 +44,17 @@ const Secondnav = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const logout=()=>{
+    localStorage.clear()
+    setuemail("");
+    setUname("");
+    setLogedIn(false)
+
+    navigate("/")
+  }
+ 
+ 
   return (
    <>
      <section id='secondnav'>
@@ -47,11 +62,25 @@ const Secondnav = () => {
             <input   />
           </div>
            <div>
-              <button id='lr'>login</button>
-              <button id='lr'>register</button>
-              <button id='card'><FaShoppingCart />|cart{proLenght}</button>
+              <button id='lr' onClick={()=>{navigate("/login")}}>login</button>
+              <button id='lr' onClick={()=>{navigate("/regist")}}>register</button>
+              <button id='card' onClick={()=>{navigate("/cardinter")}}><FaShoppingCart />|cart{proLenght}</button>
               <button id='lr'  onClick={handleShow}>admin</button>
+
            </div>
+           
+           <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+       {/* {localStorage.getItem("username")} */}
+       {uname}
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">{uemail}</Dropdown.Item>
+        <Dropdown.Item href="#/action-2" onClick={logout}>logout</Dropdown.Item>
+       
+      </Dropdown.Menu>
+    </Dropdown>
      </section>
 
      {/* ============================ model ======================== */}

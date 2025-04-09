@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
 const adminRoute = require("./route/Adminroute")
+const custRoute = require("./route/userRoute")
 const cors = require("cors")
 const dbcon = require("./utils/db")
 const path = require ("path")
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  dbcon.dbConection()
 
 app.use("/admin",adminRoute)
+app.use("/user",custRoute)
 
 const port = process.env.PORT || 8000
 app.listen(port,()=>{

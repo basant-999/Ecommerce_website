@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const cardSlice = createSlice({
     name:"mycard",
     initialState:{
-       card:[]
+       card:[],
     },
     reducers:{
          addcard:(state,actions)=>{
@@ -16,9 +16,31 @@ const cardSlice = createSlice({
                 state.card.push(actions.payload)
             }
 
+         },
+         increaseQuanty:(state,actions)=>{
+            for (var i=0;i<state.card.length;i++){
+                if(state.card[i].id==actions.payload.id){
+                    state.card[i].quanty++;
+                }
+            }
+         },
+         dcreaseQuanty:(state,actions)=>{
+            for(var i=0;i<state.card.length;i++){
+                if(state.card[i].id==actions.payload.id){
+                    if(state.card[i].quanty<=1){
+                        alert("only one item")
+                    }else{
+                        state.card[i].quanty--;
+                    }
+                   
+                }
+            }
+         },
+         deleteItem:(state,actions)=>{
+            state.card= state.card.filter(key=>key.id!=actions.payload.id)
          }
     }
 })
 
 export default cardSlice.reducer
-export const {addcard} = cardSlice.actions
+export const {addcard,increaseQuanty,dcreaseQuanty,deleteItem} = cardSlice.actions
