@@ -3,6 +3,7 @@
     justify-content: space-between;
     background-color: #222B3F;
     padding: 20px;
+    align-items: center;
     
 
   position: sticky;
@@ -17,8 +18,89 @@
     font-size: 16px;
     border: none;
 }
+#shopingcard{
+    font-size:20px;
+}
 #card{
     border: none;
     background-color: #EF6623;
     color: #FFFFFF;
+    padding: 15px;
+    /* border-radius: 5px; */
+
+}
+
+#loreg{
+    border: 4px solid green;
+  padding: 10px;
+  font-weight: 800;
+}
+
+#admin{
+    border: 4px solid  #EF6623;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+#LRC{
+    align-self:  center;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+#adDrop{
+    align-self:  center;
+    align-items: center;
+    display: flex;
+}
+
+#search{
+    display: flex;
+    width: 620px;
+    justify-content: space-evenly;
+    background-color: #222B3F;
+    height: 40px;
+    border-radius: 4px;
+    /* border: 3px transparent; */
+    border: none;
+}
+/* #search:hover{
+    border: 2px solid orangered;
+    transition: 0.25s;
+} */
+
+#sect{
+    background-color: #f3f3f3;
+    width: 50px;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+    font-size: xx-large;
+    height: 40px;
+}
+.input{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+
+}
+#searchicon{
+    width: 45px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color:  #EF6623;
+    color:  #f3f3f3; 
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+#showSearch{
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    background-color: white;
 }

@@ -1,4 +1,5 @@
 const custModel = require("../model/cusModel")
+const Productmodel = require("../model/Productmodel");
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken");
 
@@ -58,13 +59,38 @@ const Authenticate=async(req,res)=>{
         res.status(200).send(coustome)
     } catch (error) {
         console.log(error)
-    }
-
-   
+    } 
 }
+
+  const custGetData =async(req,res)=>{
+        const {userid} = req.query
+        try {
+            const coustomer = await custModel.findById(userid)
+            res.status(200).send(coustomer)
+        } catch (error) {
+            console.log(error)
+        }
+        
+  }
+
+  const getProductDetails=async(req ,res)=>{
+        console.log(req.body);
+        const {id} = req.body;
+
+        try {
+            const data = await Productmodel.findOne({_id:id});
+            console.log(data);
+            res.status(200).send(data);
+        } catch (error) {
+            res.status(400).send(error);
+        }
+        
+  }
 
 module.exports = {
     customerController,
     userlogin,
-    Authenticate
+    Authenticate,
+    custGetData,
+    getProductDetails
 } 

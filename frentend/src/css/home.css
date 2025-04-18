@@ -1,0 +1,13 @@
+#cardhome{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+}
+#cardhome img {
+ height:200px;
+ overflow: hidden;
+}

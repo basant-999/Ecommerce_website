@@ -7,6 +7,7 @@ import { HiDocumentCurrencyRupee } from "react-icons/hi2";
 import Base_url from '../config/Baseurl';
 import { useDispatch, useSelector } from 'react-redux'
 import { mycontext } from '../Contex';
+import { cardEmpty } from '../Reduxtool/cardSlice';
 
 
 const Chekout = () => {
@@ -39,7 +40,7 @@ const Chekout = () => {
   
   
   useEffect(()=>{
-    if (!localStorage.getItem("userLogedin"))
+    if (!localStorage.getItem("token"))
     {
        navigate("/");
     }
@@ -48,12 +49,13 @@ const Chekout = () => {
   
   
   const loadData=async()=>{
-    let api=`${Base_url}customer/getdata?userid=${localStorage.getItem("userid")}`;
+    let api=`${Base_url}user/getdata?userid=${localStorage.getItem("userid")}`;
   
     try {
          const response = await axios.get(api);
          console.log(response.data);
          setCusData(response.data);
+        
     } catch (error) {
        console.log(error);
     }
@@ -68,7 +70,7 @@ const Chekout = () => {
       let productsName="";
       let imgURL="";
       const ans=Product.map((key)=>{
-          totalAmount+=key.price * key.qnty;
+          totalAmount+=key.price * key.quanty;
           productsName+=key.name + ", ";
           imgURL=`${Base_url}${key.defaultImage}`;
           return(
@@ -123,11 +125,11 @@ const Chekout = () => {
       const handlePay = async () => {
         try {
           const orderURL = "http://localhost:8000/api/payment/orders";
-          const {data} = await axios.post(orderURL,{amount: totalAmount, customername:cusData.name, address:cusData.address, contact:cusData.contact, email:cusData.email, proname:productsName});
+          const {data} = await axios.post(orderURL,{amount: totalAmount, customername:cusData.name, address:cusData.address, city:cusData.city, email:cusData.email, proname:productsName});
           console.log(data);
           initPay(data.data);
   
-          dispatch(cartEmpty());
+          dispatch(cardEmpty());
   
   
         } catch (error) {
@@ -158,11 +160,14 @@ const Chekout = () => {
         <h4 align="center" style={{color:"green"}}> Your Total Paybale Amount : {totalAmount}</h4>
 
         <div style={{width:"300px", margin:"auto", fontSize:"20px", fontWeight:"bold"}}>
+          
         Customer Name : {cusData.name}
         <br/>
         Shipping Address : {cusData.address}
         <br/>
-        Contact no :  {cusData.contact}
+        Contact no :  {cusData.city}
+        <br />
+        state :{cusData.state}
         <br />
         Email :  {cusData.email}
         <br/>

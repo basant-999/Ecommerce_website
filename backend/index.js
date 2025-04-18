@@ -3,9 +3,11 @@ const app = express()
 const bodyParser = require("body-parser")
 const adminRoute = require("./route/Adminroute")
 const custRoute = require("./route/userRoute")
+const pagesRoute = require("./route/Pagesroute")
 const cors = require("cors")
 const dbcon = require("./utils/db")
 const path = require ("path")
+const paymentRoute= require("./route/Payment")
 require("dotenv").config()
 
 
@@ -23,6 +25,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/admin",adminRoute)
 app.use("/user",custRoute)
+app.use("/pages",pagesRoute)
+// ==============================
+app.use("/api/payment/",paymentRoute)
 
 const port = process.env.PORT || 8000
 app.listen(port,()=>{

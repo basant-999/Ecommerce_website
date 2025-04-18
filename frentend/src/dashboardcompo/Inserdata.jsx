@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Base_url from "../config/Baseurl"
 import axios from 'axios';
+import "../css/insertform.css"
 
 const Inserdata = () => {
    const [mydata,Setmydata] = useState({})
@@ -55,9 +56,10 @@ const Inserdata = () => {
      }
   return (
   <>
-      <Form>
+     <div id='uploadform' >
+      <Form >
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>product name</Form.Label>
+        <Form.Label>Product name</Form.Label>
         <Form.Control type="text" placeholder="Enter product" name='name' onChange={naddleSubmit} />
       </Form.Group>
 
@@ -67,19 +69,19 @@ const Inserdata = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>data</Form.Label>
+        <Form.Label>Data</Form.Label>
         <Form.Control type="text" placeholder="inter data" name='data' onChange={naddleSubmit} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword" >
-        <Form.Label>select feild</Form.Label>
+        <Form.Label> Category</Form.Label>
         <Form.Select id="disabledSelect" name='feild' onChange={naddleSubmit}>
-            <option>Fruits</option>
+            <option>Select opt</option>
             <option>Non vag</option>
             <option>Dairy&bakery</option>
-            <option>frozen</option>
+            <option>Veg</option>
             <option>personal care</option>
-            <option>Kitchen/home</option>
+            <option>Fruit Vegetabes</option>
 
           </Form.Select>
       </Form.Group>
@@ -93,6 +95,7 @@ const Inserdata = () => {
         Submit
       </Button>
     </Form>
+    </div>
   </>
   )
 }

@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Base_url from '../config/Baseurl';
 import {useNavigate} from "react-router-dom"
 import { mycontext } from '../Contex';
+import "../css/login.css"
 
 const Login = () => {
   const navigate = useNavigate()
@@ -33,21 +34,25 @@ const Login = () => {
    
   return (
    <>
-      <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail" >
-        <Form.Label>Email address</Form.Label>
+       <div id='login'>
+      <Form id='focon'>
+      <Form.Group className="mb-3" controlId="formBasicEmail" id='fogroup' >
+        <Form.Label id='labals'>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e)=>{Setemail(e.target.value)}} />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+      <Form.Group className="mb-3" controlId="formBasicPassword" id='fogroup'>
+        <Form.Label id='labals'>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=>{Setpassword(e.target.value)}} />
       </Form.Group>
      
-      <Button variant="primary" type="submit" onClick={finalsubmit}>
+      <Button id='submitbtn' variant="primary" type="submit" onClick={finalsubmit}>
         Submit
       </Button>
     </Form>
+   
+
+    </div>
    </>
   )
 }

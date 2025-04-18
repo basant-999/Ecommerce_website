@@ -218,7 +218,7 @@ const Footer = () => {
         <div>
         <h3> Newsletter </h3>
        <p> Enter your email address, be first to get <br /> exclusive offers, updates, tips and more. </p>
-       <input type="" name="" id="bhbh" />
+       <input type="" name="" id="bhbh" placeholder='Enter your Email' />
         </div>
      </article>
      <div id='finlast'>

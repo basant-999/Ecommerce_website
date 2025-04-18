@@ -10,9 +10,9 @@ const Dashboard = () => {
        navigate("/")
     }
 
-    const insert=()=>{
-      navigate("insertdata")
-    }
+    // const insert=()=>{
+    //   navigate("insertdata")
+    // }
     
    
   return (
@@ -21,15 +21,24 @@ const Dashboard = () => {
      welcome to admin dashboard
    </div>
    <div id='second'>
-    <h2>adminId {localStorage.getItem("adminid")}</h2>
+    <h4>Admin Name: {localStorage.getItem("adminname")}</h4>
     <button onClick={loginsub}>logout</button>
    </div>
-    <section id='feilds'>
-        <button onClick={insert} >insert data</button>  <br /> <br />
-        <button>sales</button> <br /> <br />
-        <button>information</button>
-    </section>
-    <Outlet/>
+       <div id='dashboardherosection'>
+              <section id='feilds'>
+                <button id='dashBtn' onClick={()=>{navigate("insertdata")}} >Upload product</button>  <br /> <br />
+                <button id='dashBtn' onClick={()=>{navigate("coustomerorder")}}>Customer Oders</button> <br /> <br />
+                <button id='dashBtn'>Product manage</button>
+                </section>
+                    <section id='outletmanage'>
+                      <div>
+                        <Outlet/>
+                      </div>
+                       
+                        
+                    </section>
+       </div>
+
   </>
   )
 }

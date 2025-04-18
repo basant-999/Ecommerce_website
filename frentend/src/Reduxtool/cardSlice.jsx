@@ -38,9 +38,12 @@ const cardSlice = createSlice({
          },
          deleteItem:(state,actions)=>{
             state.card= state.card.filter(key=>key.id!=actions.payload.id)
-         }
+         },
+         cardEmpty:(state)=>{
+            state.cart=[];
+      }
     }
 })
 
 export default cardSlice.reducer
-export const {addcard,increaseQuanty,dcreaseQuanty,deleteItem} = cardSlice.actions
+export const {addcard,increaseQuanty,dcreaseQuanty,deleteItem,cardEmpty} = cardSlice.actions

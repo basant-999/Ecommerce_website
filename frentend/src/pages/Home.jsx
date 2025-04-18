@@ -5,6 +5,10 @@ import {useDispatch} from "react-redux"
 import { addcard } from '../Reduxtool/cardSlice'
 import { mycontext } from '../Contex'
 
+
+import "../css/home.css"
+import ProductCard from '../component/Card'
+
 const Home = () => {
   const dispatch= useDispatch()
 const [mydata,Setmydata] = useState([])
@@ -52,22 +56,38 @@ const{logedIn,setuemail,setUname} = useContext(mycontext);
   const ans = mydata.map((key)=>{
     return(
       <>
-      <div>
-        <img src={`${Base_url}${key.defaultImage}`} alt="" />
-        <p>{key.name}</p>
-        <p>{key.feild}</p>
-        <p>{key.data}</p>
-        <p>{key.price}</p>
-        <button onClick={()=>{dispatch(addcard({id:key._id,name:key.name,feild:key.feild,data:key.data,price:key.price,defaultImage:key.defaultImage, images:key.images,quanty:1}))}}>addtocard</button>
+      {/* <div >  
         
-      </div>
+        <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={`${Base_url}${key.defaultImage}`} />
+            <Card.Body>
+              <Card.Title>{key.name}</Card.Title>
+              <Card.Text>
+              <p>{key.feild}</p>
+              <p>{key.data}</p>
+              <p>{key.price}</p>
+              </Card.Text>
+              <Button variant="primary" onClick={()=>{dispatch(addcard({id:key._id,name:key.name,feild:key.feild,data:key.data,price:key.price,defaultImage:key.defaultImage, images:key.images,quanty:1}))}}>Add to Cart</Button>
+            </Card.Body>
+        </Card>
+      </div> */}
+
+      <ProductCard defaultUrl={key.defaultImage}
+          name={key.name}
+          ctg={key.feild}
+          data = {key.data}
+          price={key.price}
+      />
       </>
     )
   })
   return (
     <>
-    <h1>special offers</h1>
+    {/* <h1>special offers</h1> */}
+    <div id='cardhome' >
     {ans}
+    </div>
+  
     </>
   )
 }

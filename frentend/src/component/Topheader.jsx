@@ -4,18 +4,26 @@ import bike  from "../images/bike.png"
 import "../css/topheader.css"
 import { IoLocationSharp } from "react-icons/io5";
 
+
 const Topheader = () => {
   return (
    <>
      <section id='tophead'>
-          <div>
-             <img src={logo} alt="" height="50px"/>
-             choose location <IoLocationSharp />
+          <div id='flogo'>
+           
+            <img src={logo}  height="40px" alt="" />
+           <span id='underlined-custom'> Choose location <IoLocationSharp />  </span>
+           
           </div>
           <div>
-            download app |
+            <span id='down'>
+            Download App |
+            </span>
             <img src={bike} alt="" /> 
+            <span id='time'> 
             Next available delivery slot: 28th Mar 01:00 PM - 04:00 PM
+             
+            </span>
 
           </div>
      </section>

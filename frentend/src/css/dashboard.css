@@ -1,35 +1,79 @@
 #top{
-    background-color: black;
+    background-color: #FFFFFF;
     align-items: center;
     text-align: center;
-    padding: 20px;
-    color:  white;
+    padding: 10px;
+    color:  #333333;
     font-size: 24px;
     font-weight: 800;
 }
 #second{
     display: flex;
     justify-content: space-between;
-    background-color: brown;
+    background-color:  #1E1E2F;
+    color: #FFFFFF;
     padding-left: 10px;
     padding-right: 10px;
     align-items: center;
+    text-align: center;
     padding: 10px;
 }
 #second button{
    border: none;
-   background-color: red;
-   color: black;
-   height: 40px;
+   background-color: #A0A0B2;
+   color: #2C2C3A;
+   padding: 4px 15px;
+   border: 1px solid #A0A0B2 ;
    border-radius: 10px;
 }
 #second button:hover{
-    color: blue;
-    background-color: green;
-    transition: 1s;
+    color: #A0A0B2;
+    background-color: #2C2C3A;
+    border: 1px solid #A0A0B2 ;
+    transition: 0.5s;
 }
 
 #feilds{
-    margin-top: 20px;
+    padding: 50px;
+    width: 25%;
+    background-color: #7F8C8D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
     
+}
+
+#dashboardherosection{
+    display: flex;
+}
+
+#outletmanage{
+    /* width: 100%; */
+    padding: 40px;
+    background-color:white;
+    margin: auto;
+    /* text-align: center;     */
+    
+}
+#outletmanage div{
+    /* width: 400px;
+    height: 500px;
+    margin: auto;
+   border: 2px solid #2980B9; */
+    
+    
+}
+
+#dashBtn{
+    background-color: #2C2C3A;
+    color: white;
+    border: 1px solid #2C2C3A;
+    padding: 4px 12px;
+}
+#dashBtn:hover{
+    color: white;
+    background-color: #2980B9;
+    border: 1px solid #ffffff;
+
 }
