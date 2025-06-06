@@ -71,7 +71,7 @@ const Authenticate=async(req,res)=>{
             res.status(200).send(coustomer)
         } catch (error) {
             // console.log(error)
-            res.state(400).send(error)
+            res.status(400).send(error)
         }
         
   }
