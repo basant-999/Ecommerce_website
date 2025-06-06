@@ -1,18 +1,23 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Base_url from '../config/Baseurl'
 import ProductCard from '../component/Card'
-
+import { RxCross2 } from "react-icons/rx";
 const ProductDetails = () => {
     let {id} = useParams();
 
     const [Pdata , setPdata] = useState({});
         const loadProduct=async()=>{
-            let api = `${Base_url}user/getProductDetails`
-            const response = await axios.post(api,{id});
-            console.log(response.data);
-            setPdata(response.data);
+            try {
+                       let api = `${Base_url}user/getProductDetails`
+                        const response = await axios.post(api,{id});
+                        // console.log(response.data);
+                        setPdata(response.data);
+            } catch (error) {
+                console.log(error)
+            }
+      
         }
       
         useEffect(()=>{
@@ -20,7 +25,15 @@ const ProductDetails = () => {
             loadProduct();
         },[])
 
+
+        const navigate = useNavigate();
+
   return (
+    <>
+    <div style={{textAlign:"end" ,width:"100%",padding:"10px 30px"}}>
+        <RxCross2 onClick={()=>{navigate("/")}} />
+    </div>
+    
     <div>
         {/* <h1>dfghjklkjhg</h1>
         <h3>{Pdata.name}</h3>
@@ -37,6 +50,8 @@ const ProductDetails = () => {
               </>
 
     </div>
+
+    </>
   )
 }
 

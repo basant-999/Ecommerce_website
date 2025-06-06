@@ -23,7 +23,7 @@ const Novages =async(req,res)=>{
         const response = await Productmodel.find()
         res.status(200).send(response)
     } catch (error) {
-        res.send(error)
+        res.status(400).send(error)
         
     }
  }

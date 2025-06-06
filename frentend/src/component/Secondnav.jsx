@@ -61,7 +61,7 @@ const Secondnav = () => {
         navigate("/dashboard")
         
       } catch (error) {
-        console.log(error.response.data.msg)
+        console.log(error.response.data)
         alert(error.response.data.msg)
       }
      }

@@ -7,11 +7,17 @@ import ProductCard from '../component/Card'
 const Fruitveges = () => {
   const [mydata, Setmydata] = useState([])
   const loadData=async()=>{
-      let api = `${Base_url}pages/fruitveges`
+     try {
+        let api = `${Base_url}pages/fruitveges`
       const respone = await axios.get(api)
       const vegifru = respone.data.filter(item=>item.feild == 'Fruit Vegetabes')
       // console.log (respone.data)
       Setmydata(vegifru)
+      
+     } catch (error) {
+      console.log(error)
+     }
+     
   }
 
   useEffect(()=>{

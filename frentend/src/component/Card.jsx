@@ -23,7 +23,7 @@ const ProductCard = ({defaultUrl,name,ctg,data,price}) => {
               <p>{price}</p>
               </Card.Text>
               {/* <Button variant="primary" onClick={()=>{dispatch(addcard({id:key._id,name:key.name,feild:key.feild,data:key.data,price:key.price,defaultImage:key.defaultImage, images:key.images,quanty:1}))}}>Add to Cart</Button> */}
-              <Button variant="primary" onClick={()=>{dispatch(addcard({id:name,name:name,feild:ctg,data:data,price:price,defaultImage:defaultUrl, images:[],quanty:1}))}}>Add to Cart</Button>
+              <Button variant="primary" onClick={()=>{dispatch(addcard({id:name,name:name,feild:ctg,data:data,price:price,defaultImage:defaultUrl, images:[],quanty:1})) }}>Add to Cart</Button>
 
             </Card.Body>
         </Card>

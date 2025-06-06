@@ -13,14 +13,14 @@ const Registration = () => {
         let name = e.target.name;
         let value= e.target.value;
         Setinput(values=>({...values,[name]:value}))
-        console.log(input)
+        // console.log(input)
     }
     const finalsubmit=async(e)=>{
         e.preventDefault()
         let api = `${Base_url}user/userRegistration`
         try {
             const response = await axios.post(api,input)
-            console.log(response.data)
+            // console.log(response.data)
             alert(response.data.msg)
             navigate("/")
             
@@ -28,9 +28,9 @@ const Registration = () => {
             console.log(error)
         }
     }
-    useEffect(()=>{
+    // useEffect(()=>{
 
-    },[])
+    // },[])
 
   return (
    <>

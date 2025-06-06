@@ -12,7 +12,7 @@ const PersCare = () => {
             const responses =await axios.get(api)
            //  console.log(responses.data)
            const percare = responses.data.filter(item=>item.feild == 'personal care')
-           console.log(percare)
+          //  console.log(percare)
            Setmydata(percare)
             
         } catch (error) {

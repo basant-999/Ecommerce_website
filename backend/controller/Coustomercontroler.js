@@ -20,7 +20,7 @@ const customerController =async(req,res)=>{
         res.status(200).send({msg:"complate registration"})
         
        } catch (error) {
-        console.log(error)
+          res.status(400).send(error)
        }
 }
 
@@ -41,7 +41,8 @@ const userlogin=async(req,res)=>{
 
         res.status(200).send({token:token})
      } catch (error) {
-        console.log(error)
+        // console.log(error)
+        res.status(400).send(error)
      }
       
 }
@@ -58,7 +59,8 @@ const Authenticate=async(req,res)=>{
         console.log(coustome)
         res.status(200).send(coustome)
     } catch (error) {
-        console.log(error)
+        // console.log(error)
+        res.status(400).send(error)
     } 
 }
 
@@ -68,7 +70,8 @@ const Authenticate=async(req,res)=>{
             const coustomer = await custModel.findById(userid)
             res.status(200).send(coustomer)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
+            res.state(400).send(error)
         }
         
   }
@@ -79,7 +82,7 @@ const Authenticate=async(req,res)=>{
 
         try {
             const data = await Productmodel.findOne({_id:id});
-            console.log(data);
+            // console.log(data);
             res.status(200).send(data);
         } catch (error) {
             res.status(400).send(error);
