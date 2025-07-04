@@ -1,2 +1,2 @@
- const Base_url = "http://localhost:8000/"
+ const Base_url = "https://ecommerce-website-q2w5.onrender.com"
 export default Base_url
